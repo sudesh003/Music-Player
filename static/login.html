@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icons8-music-120.png" type="image/png">
+  <link rel="stylesheet" href="login_style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class='mainbody'>
+    <div class="main">
+      <!-- <div class="login"> -->
+        <form action="http://localhost:3000/login" method="POST">
+          <label class='labelclass' for="chk" aria-hidden="true">Login</label>
+          <input class='inputclass' type="email" name="email" placeholder="Email" required="" />
+          <input class='inputclass' type="password" name="pswd" placeholder="Password" required="" />
+          <div class="g-recaptcha" data-sitekey=""></div>
+          <button class='buttonclass' type="submit">Login</button>
+        </form>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icons8-music-120.png" type="image/png">
+  <link rel="stylesheet" href="signup_style.css">
+  <title>Signup</title>
+</head>
+<body>
+  <div class='mainbody'>
+    <div class="main">
+      <div class="signup">
+        <form action="http://localhost:3000/signup" method="POST">
+          <label class='labelclass' htmlFor="chk" aria-hidden="true">Sign up</label>
+          <input class='inputclass' type="text" name="txt" placeholder="User name" required="" />
+          <input class='inputclass' type="email" name="email" placeholder="Email" required="" />
+          <input class='inputclass' type="password" name="pswd" placeholder="Password" required="" />
+          <div class="g-recaptcha" data-sitekey=""></div>
+          <button class='buttonclass'>Sign up</button>
+        </form>
+        <div class='form-bottom'>
+          <p>Already have an account? <a href="login.html" class="login-link">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+</html>

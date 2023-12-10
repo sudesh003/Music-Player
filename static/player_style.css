@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink&family=Ysabeau+SC:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink&family=Playfair+Display:ital@1&family=Ysabeau+SC:wght@600&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* header {
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    /* margin-bottom: 20px; */
+    /* padding-bottom: 40px; */
+    /* padding-top: 10px;
+    color: white;
+    font-family: 'Aref Ruqaa Ink', serif; */
+    /* font-family: 'Ysabeau SC', sans-serif; */
+/* } */
+
+/* #searchForm {
+    display: flex;
+    margin-left: 25vw;
+} */
+
+/* .fa-search {
+    margin-right: 10px;
+    /* Adjust the spacing between the icon and the input field 
+} */
+
+/* #songName {
+    width: 800px;
+    /* Set the desired width of the input field */
+    /* padding: 12px; */
+    /* Set padding to increase the height of the input field */
+    /* margin-top: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #ccc; */
+    /* Add a border */
+    /* border-radius: 25px; */
+    /* Add border-radius for rounded corners */
+    /* font-size: 16px; */
+    /* Set font size */
+    /* background-color: #f2f2f2; */
+    /* Set background color */
+    /* outline: none; */
+    /* Remove outline when focused */
+    /* transition: all 0.3s ease; */
+    /* Add transition effect */
+    /* font-family: 'Playfair Display', serif; */
+    /* font-weight: bold; */ 
+/* } */
+
+@keyframes glow {
+    0% {
+        border-color: #00fbff;
+    }
+
+    /* Red */
+    25% {
+        border-color: #00ff00;
+    }
+
+    /* Green */
+    50% {
+        border-color: #0000ff;
+    }
+
+    /* Blue */
+    75% {
+        border-color: #ff00ee;
+    }
+
+    /* Yellow */
+    100% {
+        border-color: #ff0000;
+    }
+
+    /* Red again */
+}
+
+/* #songName:focus {
+    border-color: #007bff;
+    background-color: #ffffff;
+    animation: glow 8s infinite;
+} */
+
+/* designing trending button  */
+/* .main-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.trending-button-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15vw;
+    /* border: 2px solid white; */
+    height: 30px;
+    width: 30px;
+}
+
+.trending-button{
+    font-size: 24px;
+    color: orangered;
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* header ends here */
+
+
+
+
+
+body {
+    background-image: url('pexels-daniel-reche-3721941.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slider-trend {
+    position: fixed;
+    right:-100%;
+    height: 60vh;
+    width: 30vw;
+    background: linear-gradient(to top left, #000000 50%, #ef630c 100%);
+    color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    overflow-y: scroll;
+    border-radius: 5%;
+}
+.slider-trend::-webkit-scrollbar {
+    width: 6px; /* for Chrome, Safari, and Opera */
+}
+
+.slider-trend::-webkit-scrollbar-thumb {
+    background-color: transparent; /* for Chrome, Safari, and Opera */
+}
+.slider-trend.open {
+    right: 0; /* Move the slider in when it's open */
+}
+.slider-trend-content {
+    /* padding: 10px; */
+    overflow-y: auto;
+}
+.slider-trend-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Style the player container */
+.player {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    /* Adjust margin-top as needed */
+    /* border: 2px solid black; */
+    /* border-radius: 50px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* background: linear-gradient(to top left, #000000 50%, #ef630c 100%); */
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(52, 50, 50, 0.756);
+    /* animation: glow2 15s infinite linear; */
+}
+
+@keyframes glow2 {
+    0%, 25% {
+        background: linear-gradient(to top left, #000000 50%, #ef630c 100%);
+    }
+    25%, 50% {
+        background: linear-gradient(to top left, #000000 50%, #00a6ff 100%);
+    }
+    50%, 75% {
+        background: linear-gradient(to top left, #000000 50%, #ffffff 100%);
+    }
+    75%, 100% {
+        background: linear-gradient(to top left, #000000 50%, #32ef0c 100%);
+    }
+}
+
+/* .player {
+    animation: glow2 15s infinite linear;
+} */
+
+
+
+.songtitle {
+    color: white;
+    font-size: large;
+    /* border: 2px solid black; */
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Align text to the left */
+    height: 5vh;
+    font-family: 'Playfair Display', serif;
+
+}
+
+
+/* Style the toggle button container */
+.toggle_class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* Add space between the toggle button and the slider */
+    /* border: 2px solid black; */
+}
+
+/* Style the play/pause button */
+#toggleButton {
+    font-size: 25px;
+    /* Adjust the icon size */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-right: 3vw;
+    margin-left: 3vw;
+
+}
+#prevButton,#nextButton{
+    color: white;
+    font-size: 20px;
+}
+
+.sliderAndDownload {
+    display: flex;
+    /* border: 2px solid black; */
+    width: 100vw;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the slider container */
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    /* margin-bottom: 10px; Add space between the slider and the timing display */
+    border: 1px solid black;
+    margin-right: 100px;
+    margin-left: 400px;
+}
+
+/* Style the seek slider */
+#seekSlider {
+    width: 100%;
+    cursor: pointer;
+
+}
+
+/* Webkit (Chrome, Safari) */
+#seekSlider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    /* Set the height of the track */
+    background-color: #ffffff;
+    /* Set your desired track color */
+    border: none;
+    /* Remove the default border */
+    border-radius: 2px;
+    /* Optional: Set border radius */
+    cursor: pointer;
+}
+
+#seekSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /*Remove the default appearance */
+    width: 5px;
+    /* Set the width of the thumb */
+    height: 5px;
+    /* Set the height of the thumb */
+    background-color: #e74c3c !important;
+    /* Set your desired thumb color */
+    border-radius: 50%;
+    /* Optional: Create a circular thumb */
+    margin-top: -4px;
+    /*Adjust the thumb's vertical position*/
+    cursor: pointer;
+
+}
+
+.downloadButtonclass {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+/* Style the download button */
+#downloadButton {
+    font-size: 20px;
+    /* Adjust the icon size */
+    /* margin-left: 20px; Add space between the slider and the download button */
+    /* border: 2px solid black; */
+    border-radius: 50%;
+    display: flex;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+
+}
+.favButtonClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 30px; */
+    /* margin-right: 5vw; */
+}
+#favButton{
+    font-size: 20px;
+    display: flex;
+    /* border: 2px solid white; */
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    color: white;
+    cursor: pointer;
+}
+
+/* Style the timing display */
+#timing {
+    color: white;
+}
+
+.pic-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* border: 1px solid white; */
+}
+
+
+.pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 30vw;
+    margin-bottom: 20vh;
+    /* background-color: white; */
+    /* border: 2px solid white; */
+}
+.pic img{
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Maintain the aspect ratio */
+    animation: glowAnimation 12s infinite;
+    
+}
+    @keyframes glowAnimation {
+        0% { box-shadow: 0 0 20px rgb(255, 0, 0); }
+        25% { box-shadow: 0 0 20px rgb(0, 255, 0); }
+        50% { box-shadow: 0 0 20px rgb(0, 0, 255); }
+        75% { box-shadow: 0 0 20px rgb(255, 255, 0); }
+        100% { box-shadow: 0 0 20px rgb(255, 255, 255); }
+    }
+
+
+    .ratingclass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5vw;
+    }
+
+    .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+    }
+    .rate:not(:checked) > input {
+        position:absolute;
+        top:-9999px;
+    }
+    .rate:not(:checked) > label {
+        float:right;
+        width:1em;
+        overflow:hidden;
+        white-space:nowrap;
+        cursor:pointer;
+        font-size:30px;
+        color:#ccc;
+    }
+    .rate:not(:checked) > label:before {
+        content: '★ ';
+    }
+    .rate > input:checked ~ label {
+        color: #ffc700;    
+    }
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;  
+    }
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+    

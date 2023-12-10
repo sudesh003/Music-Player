@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="icons8-music-120.png" type="image/png">
+    <title>Phonic Boom</title>
+    <!-- <link rel="stylesheet" href="player_style.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" -->
+    <!-- integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./navbar_style.css">
+    <link rel="stylesheet" href="./home_style.css">
+</head>
+
+<header id="header" class="header">
+    <div class="header-logo">
+        <a class="header-brand" href="javascript://">
+            <svg class="brand-logo" width="35" height="35" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                <image href="https://www.pngitem.com/pimgs/m/10-109121_pi-music-player-icon-hd-png-download.png"
+                    width="35" height="35" />
+            </svg>
+            <span class="brand-text">Phonic Boom</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <ul class="nav">
+            <li class="header-nav-item"><a class="header-nav-link active" href="javascript://">Home</a></li>
+            <li class="header-nav-item"><a class="header-nav-link ripple ripple-dark" href="javascript://">Contact</a>
+            </li>
+            <li class="header-nav-item"><a class="header-nav-link ripple ripple-dark" href="about.html">About</a>
+            </li>
+        </ul>
+    </div>
+    <a id="back" class="header-back ripple-grow" href="javascript://">
+        <span class="ripple-waves ripple ripple-dark">
+            <svg class="ripple-icon icon-back" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z">
+                </path>
+            </svg>
+        </span>
+    </a>
+    <div class="header-search-content">
+        <div class="search-form">
+                <input type="text" id="songName" class="header-search-input" name="songName"
+                    placeholder="Search for a song" required>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- signup button -->
+    <div class="header-profile">
+        <div class="border w-full flex items-center justify-center">
+            <a href="/nav/click" class="relative inline-block px-4 py-2 font-medium group">
+                <span
+                    class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                <span id="button-text" class="relative text-black group-hover:text-white">Loading</span>
+            </a>
+        </div>
+
+    </div>
+
+    </div>
+
+</header>
+<script>
+   document.getElementById('songName').addEventListener('keyup', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        const songName = this.value;
+        
+        // Make an API request to get the link based on the song name
+        fetch(`/api/getYouTubeVideoUrl?songName=${encodeURIComponent(songName)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the API response contains a 'link' property
+                const songLink = data.youtubeVideoUrl;
+                // console.log(songLink);
+                // Redirect to player.html with the obtained link
+                window.location.href = `player.html?searchQuery=${encodeURIComponent(songLink)}`;
+            })
+            .catch(error => {
+                console.error('Error fetching song link:', error);
+            });
+    }
+});
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <script src="player.js"></script> -->
+  <script src="script.js" defer></script>
+<body>
+
+    
+<section class="horizontal-cards">
+
+    <div class="card-section">
+        <h2>Trending Songs</h2>
+        <div class="card-container" id="trendingSongsContainer">
+            <!-- Trending songs cards go here
+            <div class="card">Song 1</div>
+            <div class="card">Song 2</div>
+            <div class="card">Song 3</div> -->
+        </div>
+    </div>
+
+    <div class="card-section">
+        <h2>Recently Played</h2>
+        <div class="card-container" id="recentSongsContainer">
+            <!-- Recently played cards go here -->
+            <!-- <div class="card">Played 1</div>
+            <div class="card">Played 2</div>
+            <div class="card">Played 3</div> -->
+        </div>
+    </div>
+
+    <div class="card-section">
+        <h2>Your Favorites</h2>
+        <div class="card-container" id="favSongsContainer">
+            <!-- Favorites cards go here -->
+            <!-- <div class="card">Favorite 1</div>
+            <div class="card">Favorite 2</div>
+            <div class="card">Favorite 3</div> -->
+        </div>
+    </div>
+</section>
+
+</body>
+
+<script src="home.js"></script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" href="icons8-music-120.png" type="image/png">
+  <title>Phonic Boom</title>
+  <link rel="stylesheet" href="player_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
+  <link rel="stylesheet" href="./navbar_style.css">
+</head>
+
+<body>
+  <div class="pic-container">
+    <div class="pic" id="image-container">
+
+    </div>
+  </div>
+  <div class="player">
+    <div class="songtitle">
+      <h2 id="songtitleId">please wait...</h2>
+    </div>
+    <div class="toggle_class">
+      <button id="prevButton" onclick="moveToRandom()"><i class="fas fa-step-backward"></i></button>
+      <button id="toggleButton" onclick="toggleYouTubeAudio()"><i class="fas fa-play"></i></button>
+      <button id="nextButton" onclick="moveToRandom()"><i class="fas fa-step-forward"></i></button>
+    </div>
+
+    <div class="sliderAndDownload">
+      <div class="slider">
+        <input type="range" id="seekSlider" min="0" step="0.01" value="0" oninput=seekAudio() style="color: #e74c3c;">
+      </div>
+      <div class="downloadButtonclass">
+        <button id="downloadButton" onclick="downloadAudio()"><i class="fas fa-download"></i></button>
+      </div>
+      <div class="favButtonclass">
+        <button id="favButton" onclick="makeSongFav()"><i class="fas fa-heart"></i></button>
+      </div>
+      <div class="ratingclass">
+        <div class="rate">
+          <input type="radio" id="star5" name="rate" value="5" onclick="makeSongRating(5)" />
+          <label for="star5" title="Excellent">5 stars</label>
+          <input type="radio" id="star4" name="rate" value="4" onclick="makeSongRating(4)"/>
+          <label for="star4" title="Good">4 stars</label>
+          <input type="radio" id="star3" name="rate" value="3" onclick="makeSongRating(3)"/>
+          <label for="star3" title="Ok">3 stars</label>
+          <input type="radio" id="star2" name="rate" value="2" onclick="makeSongRating(2)"/>
+          <label for="star2" title="Poor">2 stars</label>
+          <input type="radio" id="star1" name="rate" value="1" onclick="makeSongRating(1)"/>
+          <label for="star1" title="very bad">1 star</label>
+        </div>
+      </div>
+    </div>
+    <div id="timing">0:00 / 0:00</div>
+
+  </div>
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="player.js"></script>
+  <!-- <script src="script.js" defer></script> -->
+</body>
+
+</html>

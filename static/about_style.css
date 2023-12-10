@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure the container takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+	background-image: url('./pexels-andrea-piacquadio-3771842.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.about-section {
+    font-size: 1.5rem;
+    height: 95vh;
+    /* max-width: 600px; */
+    text-align: center;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    color: white;
+    background: rgba(118, 114, 114, 0.785);
+    /* border-radius: 8px; */
+    /* background-color: #fff; */
+    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
+}
+
+/* Add additional styling as needed for your specific design */
